@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "499264239222",
+    "firebase_url": "https://iugale.firebaseio.com",
+    "project_id": "iugale",
+    "storage_bucket": "iugale.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499264239222:android:808425cf0d7815c2b29157",
+        "android_client_info": {
+          "package_name": "com.safinaz.matrimony"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499264239222-0ke64mhct3879li7rcm97k2a2vruna72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe6bxNPl7uo8RmNO4xW9_hhWaq5eWojas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499264239222-0ke64mhct3879li7rcm97k2a2vruna72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
