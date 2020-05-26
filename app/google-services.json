@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "59208127577",
+    "firebase_url": "https://safinaz-matrimony.firebaseio.com",
+    "project_id": "safinaz-matrimony",
+    "storage_bucket": "safinaz-matrimony.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59208127577:android:e73c25895c63adff",
+        "android_client_info": {
+          "package_name": "com.safinaz.matrimony"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59208127577-u32j40m5kfljtiqiml7bumkvdmglbjdd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkfWqBwGHny4L0CEW_pui2wxiS7NN4ed4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59208127577-u32j40m5kfljtiqiml7bumkvdmglbjdd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

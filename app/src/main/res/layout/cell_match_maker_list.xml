@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/placeholder" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblTitle"
+                        android:layout_width="0dp"
+                        android:layout_weight=".60"
+                        android:layout_height="wrap_content"
+                        android:text="NMB123456"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/lblStatus"
+                        android:layout_width="0dp"
+                        android:layout_weight=".40"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right|center_vertical"
+                        android:text="Pending"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:lines="2"
+                    android:ellipsize="end"
+                    android:text="" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".33"
+                        android:text=""
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:background="@drawable/btn_red_rounded"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/btnAccept"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="Accept"
+                        android:visibility="visible"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:gravity="center_vertical|center"
+                        android:layout_marginRight="5dp"
+                        android:textAllCaps="false"
+                        android:paddingRight="8dp"
+                        android:drawablePadding="5dp"
+                        android:paddingLeft="5dp"
+                        android:drawableTint="@color/white"
+                        android:drawableStart="@drawable/ic_right_match_maker"
+                        android:background="@drawable/btn_green_rounded"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/btnReject"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:text="Reject"
+                        android:paddingTop="2dp"
+                        android:visibility="visible"
+                        android:paddingBottom="2dp"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical|center"
+                        android:textAllCaps="false"
+                        android:paddingRight="8dp"
+                        android:paddingLeft="5dp"
+                        android:drawableTint="@color/white"
+                        android:drawableStart="@drawable/ic_reject_match_maker"
+                        android:background="@drawable/btn_red_rounded"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

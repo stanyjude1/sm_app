@@ -1,0 +1,176 @@
+package com.safinaz.matrimony.Activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import com.safinaz.matrimony.Adapter.MeetingListAdapter;
+import com.safinaz.matrimony.Application.MyApplication;
+import com.safinaz.matrimony.Model.MeetingBean;
+import com.safinaz.matrimony.Model.OtherDataBean;
+import com.safinaz.matrimony.Network.ConnectionDetector;
+import com.safinaz.matrimony.R;
+import com.safinaz.matrimony.Utility.AppDebugLog;
+import com.safinaz.matrimony.Utility.Common;
+import com.safinaz.matrimony.Utility.SessionManager;
+import com.safinaz.matrimony.Utility.Utils;
+import com.safinaz.matrimony.retrofit.AppApiService;
+import com.safinaz.matrimony.retrofit.RetrofitClient;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+public class MeetingListActivity extends AppCompatActivity implements MeetingListAdapter.ItemListener {
+    private RecyclerView recyclerView;
+    private TextView lblNoRecordsFound;
+    private MeetingListAdapter adapter;
+    private List<MeetingBean> arrayList = new ArrayList<>();
+    private RelativeLayout layoutProgressBar;
+
+    private SessionManager session;
+    //Retrofit related
+    private Retrofit retrofit;
+    private AppApiService appApiService;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_meeting_list);
+
+        initialize();
+    }
+
+    private void initialize() {
+        setToolbar();
+        layoutProgressBar = findViewById(R.id.layoutProgressBar);
+        lblNoRecordsFound = findViewById(R.id.lblNoRecordsFound);
+
+        session = new SessionManager(this);
+        retrofit = RetrofitClient.getClient();
+        appApiService = retrofit.create(AppApiService.class);
+
+        getMeetingList();
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Meeting fixed by admin");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(view -> {
+            finish();
+        });
+    }
+
+    private void getMeetingList() {
+        if (!ConnectionDetector.isConnectingToInternet(this)) {
+            Common.showToast(this, getString(R.string.err_msg_no_intenet_connection));
+            return;
+        }
+
+        showProgressLayout();
+
+        Map<String, String> params = new HashMap<>();
+        params.put("user_agent", Utils.USER_AGENT);
+        params.put("csrf_new_matrimonial", session.getLoginData(SessionManager.TOKEN));
+        params.put("member_id", session.getLoginData(SessionManager.KEY_USER_ID));
+
+        for (String string : params.values()) {
+            AppDebugLog.print("params : " + string + "\n");
+        }
+
+        Call<JsonObject> call = appApiService.getMeetingList(params);
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                hideProgressLayout();
+                JsonObject data = response.body();
+
+                AppDebugLog.print("response in getPersonalizedList : " + data);
+                if (data != null) {
+                    if (data.get("status").getAsString().equalsIgnoreCase("success")) {
+                        arrayList.clear();
+                        Gson gson = new GsonBuilder().setDateFormat(Utils.GSONDateTimeFormat).create();
+                        arrayList = gson.fromJson(data.getAsJsonArray("data"), new TypeToken<List<MeetingBean>>() {
+                        }.getType());
+
+                        if (arrayList.size() > 0) {
+                            lblNoRecordsFound.setVisibility(View.GONE);
+                            initializeRecyclerView();
+                        } else {
+                            lblNoRecordsFound.setVisibility(View.VISIBLE);
+                        }
+                    } else {
+                        if (data.has("errormessage"))
+                            Common.showToast(MeetingListActivity.this, data.get("errormessage").getAsString());
+                    }
+                } else {
+                    Common.showToast(MeetingListActivity.this, getString(R.string.err_msg_something_went_wrong));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                AppDebugLog.print("error in getMeetingList : " + t.getMessage());
+                Common.showToast(MeetingListActivity.this, getString(R.string.err_msg_something_went_wrong));
+                hideProgressLayout();
+            }
+        });
+    }
+
+    private void initializeRecyclerView() {
+        recyclerView = findViewById(R.id.recyclerView);
+        adapter = new MeetingListAdapter(this, arrayList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        adapter.setListener(this);
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void openUserProfile(String otherId) {
+        if (MyApplication.getPlan()) {
+            AppDebugLog.print("user id in openUserProfile : " + otherId);
+            Intent i = new Intent(this, OtherUserProfileActivity.class);
+            i.putExtra("other_id", otherId);
+            startActivity(i);
+        } else {
+            Common common = new Common(this);
+            common.showToast("Please upgrade your membership to view this profile.");
+            startActivity(new Intent(this, PlanListActivity.class));
+        }
+    }
+
+    //Todo show progress layout
+    private void showProgressLayout() {
+        layoutProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    //Todo hide progress layout
+    private void hideProgressLayout() {
+        layoutProgressBar.setVisibility(View.GONE);
+    }
+}

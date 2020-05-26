@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image"
+    tools:context="com.safinaz.matrimony.Activities.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imgAppLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo_mega" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutUserType"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/imgAppLogo"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnOnlineMember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:src="@drawable/bg_online_member_user" />
+
+        <ImageView
+            android:id="@+id/btnExclusiveMember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:src="@drawable/bg_exclusive_member_user" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/layoutUserType"
+        android:gravity="center"
+        android:text="Find your Perfect Life Partners with us. Over 1200+ Wedding Partners for you special date &amp; Find the perfect venue &amp; save you date."
+        android:textColor="@color/gray_1"/>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_effect"
+        android:text="Select"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/lblMessage"
+        android:textColor="@color/White" />
+</RelativeLayout>

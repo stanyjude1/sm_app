@@ -1,0 +1,266 @@
+package com.nrimarriagebureu.user.bean;
+
+import com.google.gson.annotations.SerializedName;
+
+public class MatchMakerBean {
+    @SerializedName("o_id")
+    public String oId;
+    @SerializedName("my_id")
+    public String myId;
+    @SerializedName("other_id")
+    public String otherId;
+    @SerializedName("sent_on")
+    public String sentOn;
+    @SerializedName("to_be_sent_on")
+    public String toBeSentOn;
+    @SerializedName("sent")
+    public String sent;
+    @SerializedName("per_at_sent_time")
+    public Object perAtSentTime;
+    @SerializedName("staff_name")
+    public String staffName;
+    @SerializedName("is_exclusive")
+    public String isExclusive;
+    @SerializedName("expired_on")
+    public String expiredOn;
+    @SerializedName("birthdate")
+    public String birthdate;
+    @SerializedName("matri_id")
+    public String matriId;
+    @SerializedName("index_id")
+    public String indexId;
+    @SerializedName("gender")
+    public String gender;
+    @SerializedName("height")
+    public String height;
+    @SerializedName("state_name")
+    public String stateName;
+    @SerializedName("country_name")
+    public String countryName;
+    @SerializedName("religion_name")
+    public String religionName;
+    @SerializedName("caste_name")
+    public String casteName;
+    @SerializedName("city_name")
+    public String cityName;
+    @SerializedName("ocp_name")
+    public String ocpName;
+    @SerializedName("mtongue_name")
+    public String mtongueName;
+    @SerializedName("edu_name")
+    public String eduName;
+    @SerializedName("username")
+    public String username;
+    @SerializedName("reciver_response")
+    public String reciverResponse;
+    @SerializedName("photo1")
+    public String photo1;
+
+    public String getoId() {
+        return oId;
+    }
+
+    public void setoId(String oId) {
+        this.oId = oId;
+    }
+
+    public String getMyId() {
+        return myId;
+    }
+
+    public void setMyId(String myId) {
+        this.myId = myId;
+    }
+
+    public String getOtherId() {
+        return otherId;
+    }
+
+    public void setOtherId(String otherId) {
+        this.otherId = otherId;
+    }
+
+    public String getSentOn() {
+        return sentOn;
+    }
+
+    public void setSentOn(String sentOn) {
+        this.sentOn = sentOn;
+    }
+
+    public String getToBeSentOn() {
+        return toBeSentOn;
+    }
+
+    public void setToBeSentOn(String toBeSentOn) {
+        this.toBeSentOn = toBeSentOn;
+    }
+
+    public String getSent() {
+        return sent;
+    }
+
+    public void setSent(String sent) {
+        this.sent = sent;
+    }
+
+    public Object getPerAtSentTime() {
+        return perAtSentTime;
+    }
+
+    public void setPerAtSentTime(Object perAtSentTime) {
+        this.perAtSentTime = perAtSentTime;
+    }
+
+    public String getStaffName() {
+        return staffName;
+    }
+
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
+    }
+
+    public String getIsExclusive() {
+        return isExclusive;
+    }
+
+    public void setIsExclusive(String isExclusive) {
+        this.isExclusive = isExclusive;
+    }
+
+    public String getExpiredOn() {
+        return expiredOn;
+    }
+
+    public void setExpiredOn(String expiredOn) {
+        this.expiredOn = expiredOn;
+    }
+
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getMatriId() {
+        return matriId;
+    }
+
+    public void setMatriId(String matriId) {
+        this.matriId = matriId;
+    }
+
+    public String getIndexId() {
+        return indexId;
+    }
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getStateName() {
+        return stateName;
+    }
+
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public String getReligionName() {
+        return religionName;
+    }
+
+    public void setReligionName(String religionName) {
+        this.religionName = religionName;
+    }
+
+    public String getCasteName() {
+        return casteName;
+    }
+
+    public void setCasteName(String casteName) {
+        this.casteName = casteName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getOcpName() {
+        return ocpName;
+    }
+
+    public void setOcpName(String ocpName) {
+        this.ocpName = ocpName;
+    }
+
+    public String getMtongueName() {
+        return mtongueName;
+    }
+
+    public void setMtongueName(String mtongueName) {
+        this.mtongueName = mtongueName;
+    }
+
+    public String getEduName() {
+        return eduName;
+    }
+
+    public void setEduName(String eduName) {
+        this.eduName = eduName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getReciverResponse() {
+        return reciverResponse;
+    }
+
+    public void setReciverResponse(String reciverResponse) {
+        this.reciverResponse = reciverResponse;
+    }
+
+    public String getPhoto1() {
+        return photo1;
+    }
+
+    public void setPhoto1(String photo1) {
+        this.photo1 = photo1;
+    }
+}
