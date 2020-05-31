@@ -139,7 +139,7 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
                         redirectToVendor();
                     }
                 } else {
-                    Common.showToast(this,"Please select user type");
+                    Common.showToast(this,"Please select service type");
                 }
             }
             break;
@@ -152,6 +152,7 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
     }
 
     public void redirectToVendor(){
-
+        Intent i = new Intent(ServiceSelectionActivity.this, VendorActivity.class);
+        startActivity(i);
     }
 }
