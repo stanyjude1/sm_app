@@ -34,4 +34,6 @@
     <string name="str_loading">Loading&#8230;</string>
 
     <string name="lbl_place"><![CDATA[Meeting Place : <b>%s</b>]]></string>
+    <string name="tagline_activity_service_selection">Safinaz Matrimony, your one stop solution for all wedding needs.</string>
+    <string name="press_back_to_exit">Please click BACK again to exit</string>
 </resources>

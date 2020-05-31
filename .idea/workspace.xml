@@ -116,6 +116,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/PlanListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/PlanListActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/RegisterFirstActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/RegisterFirstActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/SearchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/SearchActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/SplashScreenActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/SplashScreenActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/UploadIdAndHoroscopeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/UploadIdAndHoroscopeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/UserTypeSelectionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/UserTypeSelectionActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/ViewedProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/ViewedProfileActivity.java" afterDir="false" />
@@ -142,7 +143,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="de1a47fc" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_27" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -151,7 +152,31 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sm_app-master" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sm_app-master" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sm_app-master" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -212,9 +237,10 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v21" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.safinaz.matrimony.Activities" />
@@ -225,10 +251,9 @@
       <recent name="com.safinaz.matrimony.Activities" />
       <recent name="com.safinaz.matrimony.Model" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/app" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v21" />
     </key>
   </component>
   <component name="RunDashboard">

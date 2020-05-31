@@ -132,7 +132,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
             intent.putExtra("isFromSplash", true);
         } else {
-            intent = new Intent(MyApplication.getInstance(), FirstActivity.class);
+            intent = new Intent(MyApplication.getInstance(), ServiceSelectionActivity.class);
         }
         startActivity(intent);
         finish();
