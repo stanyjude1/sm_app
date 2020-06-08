@@ -1,99 +1,159 @@
 package com.safinaz.matrimony.Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Vendor implements Serializable {
-    private String location;
-    private Integer capacity;
-    private String avgPrice;
-    private String photoUrl;
-    private Float rating;
-    private String about;
-    private String email;
-    private String vendorName;
-    private String phoneNumber;
+    @SerializedName("vendor_id")
+    @Expose
+    private String vendorId;
+    @SerializedName("vendor_img")
+    @Expose
+    private String vendorImg;
+    @SerializedName("vendor_start_rate_range")
+    @Expose
+    private String vendorStartRateRange;
+    @SerializedName("vendor_end_rate_range")
+    @Expose
+    private String vendorEndRateRange;
+    @SerializedName("vendor_country_name")
+    @Expose
+    private String vendorCountryName;
+    @SerializedName("vendor_city_name")
+    @Expose
+    private String vendorCityName;
+    @SerializedName("vendor_category_name")
+    @Expose
+    private String vendorCategoryName;
+    @SerializedName("vendor_planner_name")
+    @Expose
+    private String vendorPlannerName;
+    @SerializedName("vendor_capacity")
+    @Expose
+    private String vendorCapacity;
+    @SerializedName("vendor_address")
+    @Expose
+    private String vendorAddress;
+    @SerializedName("vendor_email")
+    @Expose
+    private String vendorEmail;
+    @SerializedName("vendor_mobile")
+    @Expose
+    private String vendorMobile;
+    private final static long serialVersionUID = -6133981158948396520L;
 
-    public Vendor(String location, Integer capacity, String avgPrice, String photoUrl, Float rating, String about, String email, String vendorName, String phoneNumber) {
-        this.location = location;
-        this.capacity = capacity;
-        this.avgPrice = avgPrice;
-        this.photoUrl = photoUrl;
-        this.rating = rating;
-        this.about = about;
-        this.email = email;
-        this.vendorName = vendorName;
-        this.phoneNumber = phoneNumber;
+    public Vendor(){}
+
+    public Vendor(String vendorId, String vendorImg, String vendorStartRateRange, String vendorEndRateRange, String vendorCountryName, String vendorCityName, String vendorCategoryName, String vendorPlannerName, String vendorCapacity, String vendorAddress, String vendorEmail, String vendorMobile) {
+        this.vendorId = vendorId;
+        this.vendorImg = vendorImg;
+        this.vendorStartRateRange = vendorStartRateRange;
+        this.vendorEndRateRange = vendorEndRateRange;
+        this.vendorCountryName = vendorCountryName;
+        this.vendorCityName = vendorCityName;
+        this.vendorCategoryName = vendorCategoryName;
+        this.vendorPlannerName = vendorPlannerName;
+        this.vendorCapacity = vendorCapacity;
+        this.vendorAddress = vendorAddress;
+        this.vendorEmail = vendorEmail;
+        this.vendorMobile = vendorMobile;
     }
 
-    public String getLocation() {
-        return location;
+    public String getVendorId() {
+        return vendorId;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
     }
 
-    public Integer getCapacity() {
-        return capacity;
+    public String getVendorImg() {
+        return vendorImg;
     }
 
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
+    public void setVendorImg(String vendorImg) {
+        this.vendorImg = vendorImg;
     }
 
-    public String getAvgPrice() {
-        return avgPrice;
+    public String getVendorStartRateRange() {
+        return vendorStartRateRange;
     }
 
-    public void setAvgPrice(String avgPrice) {
-        this.avgPrice = avgPrice;
+    public void setVendorStartRateRange(String vendorStartRateRange) {
+        this.vendorStartRateRange = vendorStartRateRange;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getVendorEndRateRange() {
+        return vendorEndRateRange;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setVendorEndRateRange(String vendorEndRateRange) {
+        this.vendorEndRateRange = vendorEndRateRange;
     }
 
-    public Float getRating() {
-        return rating;
+    public String getVendorCountryName() {
+        return vendorCountryName;
     }
 
-    public void setRating(Float rating) {
-        this.rating = rating;
+    public void setVendorCountryName(String vendorCountryName) {
+        this.vendorCountryName = vendorCountryName;
     }
 
-    public String getAbout() {
-        return about;
+    public String getVendorCityName() {
+        return vendorCityName;
     }
 
-    public void setAbout(String about) {
-        this.about = about;
+    public void setVendorCityName(String vendorCityName) {
+        this.vendorCityName = vendorCityName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getVendorCategoryName() {
+        return vendorCategoryName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setVendorCategoryName(String vendorCategoryName) {
+        this.vendorCategoryName = vendorCategoryName;
     }
 
-    public String getVendorName() {
-        return vendorName;
+    public String getVendorPlannerName() {
+        return vendorPlannerName;
     }
 
-    public void setVendorName(String vendorName) {
-        this.vendorName = vendorName;
+    public void setVendorPlannerName(String vendorPlannerName) {
+        this.vendorPlannerName = vendorPlannerName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getVendorCapacity() {
+        return vendorCapacity;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setVendorCapacity(String vendorCapacity) {
+        this.vendorCapacity = vendorCapacity;
+    }
+
+    public String getVendorAddress() {
+        return vendorAddress;
+    }
+
+    public void setVendorAddress(String vendorAddress) {
+        this.vendorAddress = vendorAddress;
+    }
+
+    public String getVendorEmail() {
+        return vendorEmail;
+    }
+
+    public void setVendorEmail(String vendorEmail) {
+        this.vendorEmail = vendorEmail;
+    }
+
+    public String getVendorMobile() {
+        return vendorMobile;
+    }
+
+    public void setVendorMobile(String vendorMobile) {
+        this.vendorMobile = vendorMobile;
     }
 }

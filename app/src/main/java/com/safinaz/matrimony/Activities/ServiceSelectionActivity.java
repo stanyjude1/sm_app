@@ -1,9 +1,15 @@
 package com.safinaz.matrimony.Activities;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -11,27 +17,31 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.safinaz.matrimony.Adapter.ServiceCategoryAdapter;
+import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.R;
 import com.safinaz.matrimony.Utility.Common;
+import com.safinaz.matrimony.viewmodel.ServiceSelectionActivityViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ServiceSelectionActivity extends AppCompatActivity implements View.OnClickListener {
+public class ServiceSelectionActivity extends AppCompatActivity implements View.OnClickListener, ServiceCategoryAdapter.ServiceAdapterOnClickHandler {
     //TODO: Replace these individual view with RecyclerView during Revamp (This will provide flexibility in adding more services)
 
-    @BindView(R.id.btnMatrimony)
-    ImageView btnMatrimony;
-    @BindView(R.id.btnWeddingVenues)
-    ImageView btnWeddingVenues;
-    @BindView(R.id.btnBridalMakeup)
-    ImageView btnBridalMakeup;
-    @BindView(R.id.btnFlowerDecorators)
-    ImageView btnFlowerDecorators;
+    @BindView(R.id.rl2)
+    RecyclerView serviceRv;
     @BindView(R.id.btnSubmit)
     Button btnSubmit;
     boolean doubleBackToExitPressedOnce = false;
     private boolean isVendor = false;
+    ServiceCategoryAdapter adapter;
+    ServiceSelectionActivityViewModel serviceSelectionActivityViewModel;
+    private List<VendorCategory> categoryList = new ArrayList<>();
+    private String categoryId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,37 +51,71 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
         setContentView(R.layout.activity_service_selection);
         ButterKnife.bind(this);
         initialize();
+        initViewModel();
     }
 
-    private void clearAllSelection(){
-        btnMatrimony.setSelected(false);
-        btnFlowerDecorators.setSelected(false);
-        btnBridalMakeup.setSelected(false);
-        btnWeddingVenues.setSelected(false);
+//    private void clearAllSelection(){
+//        btnMatrimony.setSelected(false);
+//        btnFlowerDecorators.setSelected(false);
+//        btnBridalMakeup.setSelected(false);
+//        btnWeddingVenues.setSelected(false);
+//    }
+
+    private void initViewModel() {
+        serviceSelectionActivityViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(ServiceSelectionActivityViewModel.class);
+        serviceSelectionActivityViewModel.init();
+        serviceSelectionActivityViewModel.getCategories().observe(this, new Observer<List<VendorCategory>>() {
+            @Override
+            public void onChanged(@Nullable List<VendorCategory> vendors) {
+                if (vendors != null) {
+                    categoryList.addAll(vendors);
+                    adapter.setVendorData(categoryList);
+                }
+            }
+        });
     }
 
     private void initialize() {
-        clearAllSelection();
-        btnMatrimony.setOnClickListener(this);
-        btnWeddingVenues.setOnClickListener(this);
-        btnBridalMakeup.setOnClickListener(this);
-        btnFlowerDecorators.setOnClickListener(this);
+//        clearAllSelection();
+//        btnMatrimony.setOnClickListener(this);
+//        btnWeddingVenues.setOnClickListener(this);
+//        btnBridalMakeup.setOnClickListener(this);
+//        btnFlowerDecorators.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
+        setUpRecyclerView();
+
     }
 
-    private Boolean isServiceSelected() {
-        if(btnWeddingVenues.isSelected() || btnMatrimony.isSelected() || btnBridalMakeup.isSelected() || btnFlowerDecorators.isSelected()){
-            return true;
-        } else {
-            return false;
+    private void setUpRecyclerView() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false);
+        serviceRv.setLayoutManager(gridLayoutManager);
+        serviceRv.setHasFixedSize(true);
+        adapter= new ServiceCategoryAdapter(this);
+        serviceRv.setAdapter(adapter);
+        if (adapter.getItemCount() == 0) {
+            Log.e("Test","I am here");
+//            errorImage.setVisibility(View.VISIBLE);
+//            errorView.setVisibility(View.VISIBLE);
+//            if (!isOnline()) {
+//                errorView.setText(R.string.oops_network_error);
+//            }
         }
+
     }
 
-    private void clearUserSelected(){
-        if(isServiceSelected()){
-            clearAllSelection();
-        }
-    }
+//    private Boolean isServiceSelected() {
+//        if(btnWeddingVenues.isSelected() || btnMatrimony.isSelected() || btnBridalMakeup.isSelected() || btnFlowerDecorators.isSelected()){
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
+//    private void clearUserSelected(){
+//        if(isServiceSelected()){
+//            clearAllSelection();
+//        }
+//    }
 
     @Override
     public void onBackPressed() {
@@ -99,51 +143,61 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnMatrimony: {
-                clearUserSelected();
-                btnMatrimony.setSelected(true);
-                isVendor = false;
-            }
-            break;
-            case R.id.btnWeddingVenues:{
-                clearUserSelected();
-                btnWeddingVenues.setSelected(true);
-                isVendor = true;
-            }
-            break;
-            case R.id.btnBridalMakeup: {
-                clearUserSelected();
-                btnBridalMakeup.setSelected(true);
-                isVendor = true;
-            }
-            break;
-            case R.id.btnFlowerDecorators:{
-                clearUserSelected();
-                btnFlowerDecorators.setSelected(true);
-                isVendor = true;
-            }
-            break;
-            case R.id.btnSubmit:{
-                if(btnMatrimony.isSelected()){
-                    redirectToMatrimony();
-                } else if(isVendor) {
-                    //Check kind of vendor & pass in Intent
-                    if(btnWeddingVenues.isSelected()){
+        switch (v.getId()){
+            case R.id.btnSubmit:
+                if(categoryId!=null) {
+                    if (categoryId.equals("101")) {
+                        redirectToMatrimony();
+                    } else {
                         redirectToVendor();
                     }
-                    if(btnBridalMakeup.isSelected()){
-                        redirectToVendor();
-                    }
-                    if(btnFlowerDecorators.isSelected()){
-                        redirectToVendor();
-                    }
-                } else {
-                    Common.showToast(this,"Please select service type");
                 }
-            }
-            break;
         }
+//        switch (v.getId()) {
+//            case R.id.btnMatrimony: {
+//                clearUserSelected();
+//                btnMatrimony.setSelected(true);
+//                isVendor = false;
+//            }
+//            break;
+//            case R.id.btnWeddingVenues:{
+//                clearUserSelected();
+//                btnWeddingVenues.setSelected(true);
+//                isVendor = true;
+//            }
+//            break;
+//            case R.id.btnBridalMakeup: {
+//                clearUserSelected();
+//                btnBridalMakeup.setSelected(true);
+//                isVendor = true;
+//            }
+//            break;
+//            case R.id.btnFlowerDecorators:{
+//                clearUserSelected();
+//                btnFlowerDecorators.setSelected(true);
+//                isVendor = true;
+//            }
+//            break;
+//            case R.id.btnSubmit:{
+//                if(btnMatrimony.isSelected()){
+//                    redirectToMatrimony();
+//                } else if(isVendor) {
+//                    //Check kind of vendor & pass in Intent
+//                    if(btnWeddingVenues.isSelected()){
+//                        redirectToVendor();
+//                    }
+//                    if(btnBridalMakeup.isSelected()){
+//                        redirectToVendor();
+//                    }
+//                    if(btnFlowerDecorators.isSelected()){
+//                        redirectToVendor();
+//                    }
+//                } else {
+//                    Common.showToast(this,"Please select service type");
+//                }
+//            }
+//            break;
+//        }
     }
 
     public void redirectToMatrimony(){
@@ -154,5 +208,10 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
     public void redirectToVendor(){
         Intent i = new Intent(ServiceSelectionActivity.this, VendorActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    public void onClick(VendorCategory vendorCategory) {
+       categoryId = vendorCategory.getCategoryId();
     }
 }

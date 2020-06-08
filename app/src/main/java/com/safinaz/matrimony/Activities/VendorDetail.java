@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,8 +48,8 @@ public class VendorDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_detail);
         ButterKnife.bind(this);
-        if(vendor.getVendorName()!=null) {
-            toolbar.setTitle(vendor.getVendorName());
+        if(vendor.getVendorPlannerName()!=null) {
+            toolbar.setTitle(vendor.getVendorPlannerName());
         }
         setSupportActionBar(toolbar);
         ratingBar = findViewById(R.id.rating_bar);
@@ -56,10 +57,10 @@ public class VendorDetail extends AppCompatActivity {
     }
 
     public void initViews(){
-        if(vendor.getAbout()!=null){
-            vendorAbout.setText(vendor.getAbout());
-        }
-        Picasso.get().load(vendor.getPhotoUrl()).into(vendorBackdrop, new Callback() {
+//        if(vendor.getAbout()!=null){
+//            vendorAbout.setText(vendor.getAbout());
+//        }
+        Picasso.get().load(vendor.getVendorImg()).into(vendorBackdrop, new Callback() {
             @Override
             public void onSuccess() {
 
@@ -71,7 +72,7 @@ public class VendorDetail extends AppCompatActivity {
             }
         });
 
-        Picasso.get().load(vendor.getPhotoUrl()).into(photo, new Callback() {
+        Picasso.get().load(vendor.getVendorImg()).into(photo, new Callback() {
             @Override
             public void onSuccess() {
 
@@ -83,24 +84,25 @@ public class VendorDetail extends AppCompatActivity {
             }
         });
 
-        if(vendor.getLocation()!=null){
-            vendorLocation.setText(vendor.getLocation());
+        if(vendor.getVendorAddress()!=null){
+            vendorLocation.setText(vendor.getVendorAddress());
         }
-        if(vendor.getPhoneNumber()!=null){
-            vendorPhone.setText(vendor.getPhoneNumber());
+        if(vendor.getVendorMobile()!=null){
+            vendorPhone.setText(vendor.getVendorMobile());
         }
-        if(vendor.getPhoneNumber()!=null){
-            vendorEmail.setText(vendor.getEmail());
+        if(vendor.getVendorEmail()!=null){
+            vendorEmail.setText(vendor.getVendorEmail());
         }
 
-        if(vendor.getRating()!=null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                ratingBar.setRating(vendor.getRating());
-            } else {
-                ratingBar.setRating(vendor.getRating());
-            }
-            vendorRating.setText(String.format("Rating: %s / 5", vendor.getRating()));
-
-        }
+//        if(vendor.getRating()!=null) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                ratingBar.setRating(vendor.getRating());
+//            } else {
+//                ratingBar.setRating(vendor.getRating());
+//            }
+//            vendorRating.setText(String.format("Rating: %s / 5", vendor.getRating()));
+//
+//        }
+        ratingBar.setVisibility(View.GONE);
     }
 }

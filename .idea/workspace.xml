@@ -13,7 +13,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AvailableLibraryUpdateStorage">
@@ -124,6 +124,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Fragments/MyPhotoFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Fragments/MyPhotoFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Common.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/retrofit/AppApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/retrofit/AppApiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_other_user_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_other_user_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register_first.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register_first.xml" afterDir="false" />

@@ -85,6 +85,9 @@ public class Utils {
     public static final String UPDATE_PERSONALIZED_STATUS_REQUEST = "matches/action_update_status";
     //Meeting list
     public static final String GET_MEETING_DATA = "matches/fix_meeting_by_admin";
+    //Vendor List
+    public static final String GET_VENDOR_CATEGORIES = "common_request/get_category";
+    public static final String GET_VENDORS = "common_request/get_vendors";
 
     public static final String REGISTRATION_COMPLETE = "registrationComplete";
     public static final String PUSH_NOTIFICATION = "pushNotification";

@@ -42,7 +42,7 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorHold
     @Override
     public void onBindViewHolder(@NonNull VendorAdapter.VendorHolder holder, int position) {
         Vendor vendor = vendorList.get(position);
-        Picasso.get().load(vendor.getPhotoUrl()).into(holder.vendorPhoto, new Callback() {
+        Picasso.get().load(vendor.getVendorImg()).into(holder.vendorPhoto, new Callback() {
             @Override
             public void onSuccess() {
 
@@ -55,11 +55,11 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorHold
             }
         });
 
-        if(vendor.getVendorName()!=null){
-            holder.vendorName.setText(vendor.getVendorName());
+        if(vendor.getVendorPlannerName()!=null){
+            holder.vendorName.setText(vendor.getVendorPlannerName());
         }
-        if(vendor.getAbout()!=null){
-            holder.vendorDetail.setText(vendor.getAbout());
+        if(vendor.getVendorAddress()!=null){
+            holder.vendorDetail.setText(vendor.getVendorAddress());
         }
     }
 
@@ -73,12 +73,12 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorHold
 
     public void setVendorData(List<Vendor> vendorData) {
         Log.e("Test",vendorData.toString());
-        Collections.sort(vendorData, new Comparator<Vendor>() {
-            @Override
-            public int compare(Vendor lhs, Vendor rhs) {
-                return (Double.compare(rhs.getRating(), lhs.getRating()));
-            }
-        });
+//        Collections.sort(vendorData, new Comparator<Vendor>() {
+//            @Override
+//            public int compare(Vendor lhs, Vendor rhs) {
+//                return (Double.compare(rhs.getRating(), lhs.getRating()));
+//            }
+//        });
         vendorList = vendorData;
         notifyDataSetChanged();
     }
