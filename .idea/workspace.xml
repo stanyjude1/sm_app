@@ -125,6 +125,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Common.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Utility/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/retrofit/AppApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/retrofit/AppApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/retrofit/RetrofitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/retrofit/RetrofitClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_other_user_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_other_user_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register_first.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register_first.xml" afterDir="false" />

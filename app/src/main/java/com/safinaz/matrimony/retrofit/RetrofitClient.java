@@ -15,6 +15,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
     private static Retrofit retrofit = null;
 
+    private static Retrofit retrofitVendor = new Retrofit.Builder()
+            .baseUrl(Utils.Base_url)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(RetryPolicy.okClient())
+            .build();
+
+    public static <S> S createService(Class<S> serviceClass) {
+        return retrofitVendor.create(serviceClass);
+    }
+
 
     //TODO Retrofit Use for simple get request
     public static Retrofit getClient() {

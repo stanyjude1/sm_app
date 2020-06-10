@@ -30,7 +30,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ServiceSelectionActivity extends AppCompatActivity implements View.OnClickListener, ServiceCategoryAdapter.ServiceAdapterOnClickHandler {
-    //TODO: Replace these individual view with RecyclerView during Revamp (This will provide flexibility in adding more services)
 
     @BindView(R.id.rl2)
     RecyclerView serviceRv;
@@ -87,7 +86,12 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
     }
 
     private void setUpRecyclerView() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false){
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
         serviceRv.setLayoutManager(gridLayoutManager);
         serviceRv.setHasFixedSize(true);
         adapter= new ServiceCategoryAdapter(this);

@@ -57,6 +57,10 @@ public class MyApplication extends Application {
         notificationChannels.createNotificationChannels(context);
     }
 
+    public static Context getContext() {
+        return mInstance;
+    }
+
     public void setPicassoSingleInstance() {
         Picasso.setSingletonInstance(new Picasso.Builder(context).build());
     }

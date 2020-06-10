@@ -1,19 +1,28 @@
 package com.safinaz.matrimony.repository;
 
 import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
 
 import com.safinaz.matrimony.Model.Vendor;
 import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.Model.VendorCategoryResponse;
+import com.safinaz.matrimony.retrofit.AppApiService;
+import com.safinaz.matrimony.retrofit.RetrofitClient;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class VendorRepository {
     public static VendorRepository vendorRepository;
+    private AppApiService appApiService;
+
 
     public VendorRepository(){
-
+        appApiService = RetrofitClient.createService(AppApiService.class);
     }
 
     public static VendorRepository getInstance(){
@@ -34,13 +43,25 @@ public class VendorRepository {
     }
 
     public MutableLiveData<List<VendorCategory>> getCategories(){
-        List<VendorCategory> vendorCategories = new ArrayList<>();
         final MutableLiveData<List<VendorCategory>> vendorCategoryMutableLiveData = new MutableLiveData<>();
-        vendorCategories.add(new VendorCategory("101", "https://picsum.photos/id/1031/300", "Matrimony"));
-        vendorCategories.add(new VendorCategory("132", "https://sm.iugale.tech/assets/wedding-planner/e27adcebe8363797b39ed1182b6a73f4.png", "category_1"));
-        vendorCategories.add(new VendorCategory("138", "https://sm.iugale.tech/assets/wedding-planner/7da4c61beeead60fe960abcb1d53ce0a.png", "category_4"));
-        vendorCategories.add(new VendorCategory("104", "https://picsum.photos/id/1031/300", "Wedding Venue"));
-        vendorCategoryMutableLiveData.setValue(vendorCategories);
+        appApiService.getVendorCategories().enqueue(new Callback<VendorCategoryResponse>() {
+            @Override
+            public void onResponse(Call<VendorCategoryResponse> call, Response<VendorCategoryResponse> response) {
+                if (response.isSuccessful() && response.code() == 200 && response.body().getErrorCode()==0) {
+                    vendorCategoryMutableLiveData.setValue(response.body().getSuccess());
+                } else {
+                    vendorCategoryMutableLiveData.setValue(null);
+                    Log.d("API Request", "Request failed with error" + response.code() + " " + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VendorCategoryResponse> call, Throwable t) {
+                Log.e("Test", t.toString());
+                vendorCategoryMutableLiveData.setValue(null);
+            }
+        });
+
 
         return vendorCategoryMutableLiveData;
     }
