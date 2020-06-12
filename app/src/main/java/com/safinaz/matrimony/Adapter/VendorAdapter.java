@@ -50,7 +50,7 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorHold
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(holder.itemView.getContext(), "Error Occurred", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(holder.itemView.getContext(), "Error Occurred", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         });

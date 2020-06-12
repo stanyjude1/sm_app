@@ -81,7 +81,8 @@ public class ServiceCategoryAdapter extends RecyclerView.Adapter<ServiceCategory
     }
 
     public void setVendorData(List<VendorCategory> vendorData) {
-        vendorCategories = vendorData;
+        vendorCategories.add(new VendorCategory("101", "https://picsum.photos/seed/picsum/200/300", "Matrimony"));
+        vendorCategories.addAll(vendorData);
         notifyDataSetChanged();
     }
 

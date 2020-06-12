@@ -17,6 +17,20 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/logo_mega" />
 
+        <TextView
+            android:id="@+id/lblMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/imgAppLogo"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Choose a Service: "
+            android:textColor="@color/gray_1"/>
+
 
 <!--    <LinearLayout-->
 <!--        android:id="@+id/rl2"-->
@@ -75,7 +89,7 @@
         android:layout_height="wrap_content"
         android:overScrollMode="never"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/imgAppLogo"
+        android:layout_below="@+id/lblMessage2"
         />
 
     <TextView
@@ -90,7 +104,7 @@
         android:text="@string/tagline_activity_service_selection"
         android:textColor="@color/gray_1"/>
 
-    <Button
+<!--    <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,6 +115,6 @@
         android:textAllCaps="false"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/lblMessage"
-        android:textColor="@color/White" />
+        android:textColor="@color/White" />-->
     </RelativeLayout>
 </ScrollView>

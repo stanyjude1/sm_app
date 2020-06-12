@@ -16,11 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 
 import com.safinaz.matrimony.Adapter.VendorAdapter;
 import com.safinaz.matrimony.Model.Vendor;
 import com.safinaz.matrimony.R;
+import com.safinaz.matrimony.Utility.Constants;
 import com.safinaz.matrimony.viewmodel.VendorActivityViewModel;
 
 import java.util.ArrayList;
@@ -30,22 +33,38 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.safinaz.matrimony.Utility.Constants.VENDOR_DATA;
+import static com.safinaz.matrimony.Utility.Utils.isOnline;
 
 public class VendorActivity extends AppCompatActivity implements VendorAdapter.VendorAdapterOnClickHandler {
     @BindView(R.id.vendor_rv)
     RecyclerView vendorRv;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.progress)
+    ProgressBar progressBar;
+    @BindView(R.id.empty)
+    TextView empty;
 
     private VendorActivityViewModel vendorActivityViewModel;
     private VendorAdapter vendorAdapter;
     private List<Vendor> vendorList = new ArrayList<>();
+    private String id;
+    private String CategoryName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent i = getIntent();
+        if(i.hasExtra(Constants.CARTEGORY_PARAM)){
+            id = i.getStringExtra(Constants.CARTEGORY_PARAM);
+            CategoryName = i.getStringExtra(Constants.CARTEGORY_NAME);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor);
         ButterKnife.bind(this);
-        toolbar.setTitle("Vendors");
+        if(CategoryName!=null) {
+            toolbar.setTitle(CategoryName + " Vendors");
+        } else {
+            toolbar.setTitle("Vendors");
+        }
         setSupportActionBar(toolbar);
         setUpRecyclerView();
         initViewModel();
@@ -54,9 +73,10 @@ public class VendorActivity extends AppCompatActivity implements VendorAdapter.V
     private void initViewModel(){
         vendorActivityViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(VendorActivityViewModel.class);
         vendorActivityViewModel.init();
-        vendorActivityViewModel.getVendors().observe(this, new Observer<List<Vendor>>() {
+        vendorActivityViewModel.getVendors(id).observe(this, new Observer<List<Vendor>>() {
             @Override
             public void onChanged(@Nullable List<Vendor> vendors) {
+                progressBar.setVisibility(View.INVISIBLE);
                 if(vendors!=null){
                     vendorList.addAll(vendors);
                     vendorAdapter.setVendorData(vendorList);
@@ -72,13 +92,15 @@ public class VendorActivity extends AppCompatActivity implements VendorAdapter.V
         vendorAdapter = new VendorAdapter(this);
         vendorRv.setAdapter(vendorAdapter);
         if (vendorAdapter.getItemCount() == 0) {
-            Log.e("Test","I am here");
-//            errorImage.setVisibility(View.VISIBLE);
-//            errorView.setVisibility(View.VISIBLE);
-//            if (!isOnline()) {
-//                errorView.setText(R.string.oops_network_error);
-//            }
+            //Log.e("Test","I am here");
+            //empty.setVisibility(View.VISIBLE);
+                        if (!isOnline()) {
+                            empty.setVisibility(View.VISIBLE);
+                            empty.setText("Oops! Network Error");
+
+                        }
         }
+
 
     }
 

@@ -6,9 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.safinaz.matrimony.Fragments.BottomSheetSendMessage;
 import com.safinaz.matrimony.Model.Vendor;
 import com.safinaz.matrimony.R;
 import com.squareup.picasso.Callback;
@@ -21,6 +23,8 @@ import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 import static com.safinaz.matrimony.Utility.Constants.VENDOR_DATA;
 
 public class VendorDetail extends AppCompatActivity {
+    @BindView(R.id.btnSubmit)
+    Button submitBtn;
     @BindView(R.id.vendor_backdrop)
     ImageView vendorBackdrop;
     @BindView(R.id.toolbar)
@@ -48,6 +52,13 @@ public class VendorDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_detail);
         ButterKnife.bind(this);
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomSheetSendMessage sendCreateBottomSheet = new BottomSheetSendMessage();
+                sendCreateBottomSheet.show(getSupportFragmentManager(), "sendcreatebottomsheet");
+            }
+        });
         if(vendor.getVendorPlannerName()!=null) {
             toolbar.setTitle(vendor.getVendorPlannerName());
         }

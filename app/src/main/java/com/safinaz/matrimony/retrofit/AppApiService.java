@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import java.util.Map;
 
 import com.safinaz.matrimony.Model.VendorCategoryResponse;
+import com.safinaz.matrimony.Model.VendorResponse;
 import com.safinaz.matrimony.Utility.Utils;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -16,6 +17,8 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Use for api call and get your response in your activity or fragment
@@ -69,5 +72,8 @@ public interface AppApiService {
 
     @GET(Utils.GET_VENDOR_CATEGORIES)
     Call<VendorCategoryResponse> getVendorCategories();
+
+    @GET(Utils.GET_VENDORS)
+    Call<VendorResponse> getVendorCategories(@Query("category_id") String id);
 
 }

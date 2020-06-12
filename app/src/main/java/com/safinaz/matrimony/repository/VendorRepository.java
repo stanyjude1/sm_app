@@ -6,6 +6,7 @@ import android.util.Log;
 import com.safinaz.matrimony.Model.Vendor;
 import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.Model.VendorCategoryResponse;
+import com.safinaz.matrimony.Model.VendorResponse;
 import com.safinaz.matrimony.retrofit.AppApiService;
 import com.safinaz.matrimony.retrofit.RetrofitClient;
 
@@ -32,12 +33,28 @@ public class VendorRepository {
         return vendorRepository;
     }
 
-    public MutableLiveData<List<Vendor>> getVendors(){
+    public MutableLiveData<List<Vendor>> getVendors(String id){
         List<Vendor> vendorList = new ArrayList<>();
         final MutableLiveData<List<Vendor>> vendorMutableLiveData = new MutableLiveData<>();
-        vendorList.add(new Vendor("1","https://sm.iugale.tech/assets/wedding-planner/0050313d8c119dfe30d84d5d3b90367a.png", "50", "150", "India", "Bangalore", "category 1", "planner 1", "500", "ttbhrf", "grg@rgre.rfgre", "+91-222225522222"));
-        vendorList.add(new Vendor("2", "https://sm.iugale.tech/assets/wedding-planner/7da4c61beeead60fe960abcb1d53ce0a.png", "2", "12", "India", "Bangalore", "category 1", "planner 1", "0", "dsjdhsjd jshd", "smm5@tempmails.io", "+91-664646464646"));
-        vendorMutableLiveData.setValue(vendorList);
+        appApiService.getVendorCategories(id).enqueue(new Callback<VendorResponse>() {
+            @Override
+            public void onResponse(Call<VendorResponse> call, Response<VendorResponse> response) {
+                if (response.isSuccessful() && response.code() == 200 && response.body().getErrorCode()==0) {
+                    vendorMutableLiveData.setValue(response.body().getSuccess());
+                } else {
+                    vendorMutableLiveData.setValue(null);
+                    Log.d("API Request", "Request failed with error" + response.code() + " " + response.message());
+                }
+            }
+            @Override
+            public void onFailure(Call<VendorResponse> call, Throwable t) {
+                Log.e("Test", t.toString());
+                vendorMutableLiveData.setValue(null);
+            }
+        });
+//        vendorList.add(new Vendor("1","https://sm.iugale.tech/assets/wedding-planner/0050313d8c119dfe30d84d5d3b90367a.png", "50", "150", "India", "Bangalore", "category 1", "planner 1", "500", "ttbhrf", "grg@rgre.rfgre", "+91-222225522222"));
+//        vendorList.add(new Vendor("2", "https://sm.iugale.tech/assets/wedding-planner/7da4c61beeead60fe960abcb1d53ce0a.png", "2", "12", "India", "Bangalore", "category 1", "planner 1", "0", "dsjdhsjd jshd", "smm5@tempmails.io", "+91-664646464646"));
+//        vendorMutableLiveData.setValue(vendorList);
 
         return vendorMutableLiveData;
     }

@@ -21,6 +21,7 @@ import com.safinaz.matrimony.Adapter.ServiceCategoryAdapter;
 import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.R;
 import com.safinaz.matrimony.Utility.Common;
+import com.safinaz.matrimony.Utility.Constants;
 import com.safinaz.matrimony.viewmodel.ServiceSelectionActivityViewModel;
 
 import java.util.ArrayList;
@@ -33,8 +34,6 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
 
     @BindView(R.id.rl2)
     RecyclerView serviceRv;
-    @BindView(R.id.btnSubmit)
-    Button btnSubmit;
     boolean doubleBackToExitPressedOnce = false;
     private boolean isVendor = false;
     ServiceCategoryAdapter adapter;
@@ -80,7 +79,6 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
 //        btnWeddingVenues.setOnClickListener(this);
 //        btnBridalMakeup.setOnClickListener(this);
 //        btnFlowerDecorators.setOnClickListener(this);
-        btnSubmit.setOnClickListener(this);
         setUpRecyclerView();
 
     }
@@ -147,16 +145,7 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btnSubmit:
-                if(categoryId!=null) {
-                    if (categoryId.equals("101")) {
-                        redirectToMatrimony();
-                    } else {
-                        redirectToVendor();
-                    }
-                }
-        }
+
 //        switch (v.getId()) {
 //            case R.id.btnMatrimony: {
 //                clearUserSelected();
@@ -209,13 +198,20 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
         startActivity(i);
     }
 
-    public void redirectToVendor(){
+    public void redirectToVendor(String id, String CategoryName){
         Intent i = new Intent(ServiceSelectionActivity.this, VendorActivity.class);
+        i.putExtra(Constants.CARTEGORY_PARAM, id);
+        i.putExtra(Constants.CARTEGORY_NAME, CategoryName);
+        Log.e("Test", id);
         startActivity(i);
     }
 
     @Override
     public void onClick(VendorCategory vendorCategory) {
-       categoryId = vendorCategory.getCategoryId();
+       if(vendorCategory.getCategoryId().equals("101")){
+           redirectToMatrimony();
+       } else {
+           redirectToVendor(vendorCategory.getCategoryId(), vendorCategory.getCategoryName());
+       }
     }
 }

@@ -24,8 +24,8 @@ public class VendorActivityViewModel extends ViewModel {
         vendorRepository = vendorRepository.getInstance();
     }
 
-    public LiveData<List<Vendor>> getVendors(){
-        mutableLiveData = vendorRepository.getVendors();
+    public LiveData<List<Vendor>> getVendors(String id){
+        mutableLiveData = vendorRepository.getVendors(id);
         return mutableLiveData;
     }
 }
