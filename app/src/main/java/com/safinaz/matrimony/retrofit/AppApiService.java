@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 
 import java.util.Map;
 
+import com.safinaz.matrimony.Model.ContactUsResponse;
 import com.safinaz.matrimony.Model.VendorCategoryResponse;
 import com.safinaz.matrimony.Model.VendorResponse;
 import com.safinaz.matrimony.Utility.Utils;
@@ -75,5 +76,9 @@ public interface AppApiService {
 
     @GET(Utils.GET_VENDORS)
     Call<VendorResponse> getVendorCategories(@Query("category_id") String id);
+
+    @POST(Utils.CONTACT_VENDOR)
+    @FormUrlEncoded
+    Call<ContactUsResponse> sendForm(@FieldMap Map<String,String> params);
 
 }

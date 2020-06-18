@@ -1,5 +1,8 @@
 package com.safinaz.matrimony.Utility;
 
+import android.content.Context;
+import android.util.DisplayMetrics;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -89,6 +92,7 @@ public class Utils {
     //Vendor List
     public static final String GET_VENDOR_CATEGORIES = "common_request/get_category";
     public static final String GET_VENDORS = "common_request/get_vendors";
+    public static final String CONTACT_VENDOR = "common_request/contact_vendor";
 
     public static final String REGISTRATION_COMPLETE = "registrationComplete";
     public static final String PUSH_NOTIFICATION = "pushNotification";
@@ -440,6 +444,13 @@ public class Utils {
         }
 
         return false;
+    }
+
+    public static int calculateNoOfColumns(Context context, float columnWidthDp) { // For example columnWidthdp=180
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
+        int noOfColumns = (int) (screenWidthDp / columnWidthDp + 0.5); // +0.5 for correct rounding to int.
+        return noOfColumns;
     }
 
 }

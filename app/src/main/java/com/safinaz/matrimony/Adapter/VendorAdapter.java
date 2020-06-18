@@ -84,7 +84,7 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorHold
     }
 
     public interface VendorAdapterOnClickHandler {
-        void onClick(Vendor vendor, ImageView vendorImage);
+        void onClick(Vendor vendor, View vendorImage);
     }
 
     public class VendorHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -103,7 +103,7 @@ public class VendorAdapter extends RecyclerView.Adapter<VendorAdapter.VendorHold
         @Override
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
-            mCallback.onClick(vendorList.get(adapterPosition), vendorPhoto);
+            mCallback.onClick(vendorList.get(adapterPosition), itemView);
         }
     }
 }

@@ -105,7 +105,7 @@ public class VendorActivity extends AppCompatActivity implements VendorAdapter.V
     }
 
     @Override
-    public void onClick(Vendor vendor, ImageView imageView) {
+    public void onClick(Vendor vendor,View imageView) {
         Intent i = new Intent(this, VendorDetail.class);
         i.putExtra(VENDOR_DATA, vendor);
         ActivityOptionsCompat options = ActivityOptionsCompat.

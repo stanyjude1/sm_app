@@ -22,6 +22,7 @@ import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.R;
 import com.safinaz.matrimony.Utility.Common;
 import com.safinaz.matrimony.Utility.Constants;
+import com.safinaz.matrimony.Utility.Utils;
 import com.safinaz.matrimony.viewmodel.ServiceSelectionActivityViewModel;
 
 import java.util.ArrayList;
@@ -84,7 +85,7 @@ public class ServiceSelectionActivity extends AppCompatActivity implements View.
     }
 
     private void setUpRecyclerView() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false){
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, Utils.calculateNoOfColumns(this, 180), RecyclerView.VERTICAL, false){
             @Override
             public boolean canScrollVertically() {
                 return false;

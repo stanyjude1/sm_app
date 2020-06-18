@@ -67,27 +67,45 @@
                 </RelativeLayout>
 
                 <LinearLayout
+                    android:layout_toEndOf="@id/vendor_relative_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8dp"
                     android:orientation="vertical">
-
-                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
-                        android:id="@+id/rating_bar"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:stepSize="0.1"
-                        style="@style/Widget.MaterialRatingBar.RatingBar" />
-
+                        android:text="Price"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
                     <TextView
                         android:id="@+id/vendor_rating"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="16dp"
-                        android:text="Rating: 3 / 5"
+                        android:layout_marginTop="4dp"
+                        android:text="50-150"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Headcount"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
+                    <TextView
+                        android:id="@+id/vendor_capacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:text="500"
                         android:textAlignment="center"
                         android:textSize="18sp" />
 
@@ -102,6 +120,7 @@
                 android:layout_marginTop="20dp"
                 android:animateLayoutChanges="true"
                 android:text="Sample"
+                android:visibility="gone"
                 android:textColor="@color/black" />
 
 <!--            <ImageButton-->
@@ -159,6 +178,18 @@
                 android:layout_marginTop="8dp"
                 android:text="sample"
                 android:textColor="@color/black" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/vendor_adderess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="sample"
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
             <Button

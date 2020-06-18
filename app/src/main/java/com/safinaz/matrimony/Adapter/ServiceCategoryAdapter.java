@@ -60,11 +60,11 @@ public class ServiceCategoryAdapter extends RecyclerView.Adapter<ServiceCategory
             holder.categoryName.setText(vendorCategory.getCategoryName());
         }
 
-        if (position == selectedItem) {
-            holder.cardParent.setSelected(true);
-        } else {
-            holder.cardParent.setSelected(false);
-        }
+//        if (position == selectedItem) {
+//            holder.cardParent.setSelected(true);
+//        } else {
+//            holder.cardParent.setSelected(false);
+//        }
     }
 
     @Override
@@ -87,8 +87,8 @@ public class ServiceCategoryAdapter extends RecyclerView.Adapter<ServiceCategory
     }
 
     public class ServiceHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @BindView(R.id.rl)
-        RelativeLayout cardParent;
+//        @BindView(R.id.rl)
+//        RelativeLayout cardParent;
         @BindView(R.id.categoryImage)
         ImageView categoryImage;
         @BindView(R.id.categoryName)

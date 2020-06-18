@@ -107,6 +107,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/DashboardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/DashboardActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/EditPreferenceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/EditPreferenceActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/EditProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/EditProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/FirstActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/FirstActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/LikeProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/LikeProfileActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/MakePaymentsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/MakePaymentsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/ManagePhotosActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/safinaz/matrimony/Activities/ManagePhotosActivity.java" afterDir="false" />
@@ -182,12 +183,15 @@
       </state>
     </system>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="sm_app-master" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>

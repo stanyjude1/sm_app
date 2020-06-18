@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.safinaz.matrimony.Activities.VendorDetail;
 import com.safinaz.matrimony.R;
 
 import butterknife.BindView;
@@ -24,6 +25,10 @@ public class BottomSheetSendMessage extends BottomSheetDialogFragment {
     EditText message;
     @BindView(R.id.send_btn)
     Button sendBtn;
+    @BindView(R.id.customer_name)
+    EditText customerName;
+    @BindView(R.id.customer_mobile)
+    EditText customerMobile;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,7 +39,9 @@ public class BottomSheetSendMessage extends BottomSheetDialogFragment {
             @Override
             public void onClick(View v) {
                 if(formCheck()){
-                    Toast.makeText(getActivity(), "Message Sent", Toast.LENGTH_LONG).show();
+                    if(getActivity() instanceof VendorDetail) {
+                        ((VendorDetail) getActivity()).sendMessage(customerName.getText().toString(), email.getText().toString(), customerMobile.getText().toString(), message.getText().toString());
+                    }
                     dismiss();
                 }
             }
@@ -51,6 +58,16 @@ public class BottomSheetSendMessage extends BottomSheetDialogFragment {
 
         if(message.getText().toString().isEmpty()){
             message.setError("Required");
+            flag = false;
+        }
+
+        if(customerName.getText().toString().isEmpty()){
+            customerName.setError("Required");
+            flag = false;
+        }
+
+        if(customerMobile.getText().toString().isEmpty()){
+            customerMobile.setError("Required");
             flag = false;
         }
 
