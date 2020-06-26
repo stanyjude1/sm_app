@@ -1,9 +1,8 @@
 package com.safinaz.matrimony.repository;
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 import android.util.Log;
 
-import com.safinaz.matrimony.Model.ContactUsData;
 import com.safinaz.matrimony.Model.ContactUsResponse;
 import com.safinaz.matrimony.Model.Vendor;
 import com.safinaz.matrimony.Model.VendorCategory;

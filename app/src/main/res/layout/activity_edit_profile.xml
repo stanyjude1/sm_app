@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.safinaz.matrimony.Activities.EditProfileActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -20,14 +20,14 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dp">
@@ -83,7 +83,7 @@
                             android:padding="10dp"
                             android:src="@drawable/heart_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_mari"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -116,7 +116,7 @@
                             android:padding="10dp"
                             android:src="@drawable/dob_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_t_child"
                             android:layout_width="match_parent"
@@ -149,7 +149,7 @@
                             android:padding="10dp"
                             android:src="@drawable/dob_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_child_status"
                             android:layout_width="match_parent"
@@ -181,7 +181,7 @@
                             android:padding="10dp"
                             android:src="@drawable/tongue_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_tongue"
                             android:layout_width="match_parent"
@@ -245,7 +245,7 @@
                             android:padding="10dp"
                             android:src="@drawable/height_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_height"
                             android:layout_width="match_parent"
@@ -277,7 +277,7 @@
                             android:padding="10dp"
                             android:src="@drawable/weight_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_weight"
                             android:layout_width="match_parent"
@@ -338,7 +338,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_body"
                             android:layout_width="match_parent"
@@ -370,7 +370,7 @@
                             android:padding="10dp"
                             android:src="@drawable/eat_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_eat"
                             android:layout_width="match_parent"
@@ -402,7 +402,7 @@
                             android:padding="10dp"
                             android:src="@drawable/smok_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_smok"
                             android:layout_width="match_parent"
@@ -434,7 +434,7 @@
                             android:padding="10dp"
                             android:src="@drawable/drink_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_drink"
                             android:layout_width="match_parent"
@@ -466,7 +466,7 @@
                             android:padding="10dp"
                             android:src="@drawable/hoby_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_skin"
                             android:layout_width="match_parent"
@@ -498,7 +498,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_blood"
                             android:layout_width="match_parent"
@@ -606,7 +606,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_created"
                             android:layout_width="match_parent"
@@ -638,7 +638,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_reference"
                             android:layout_width="match_parent"
@@ -689,7 +689,7 @@
                             android:padding="10dp"
                             android:src="@drawable/religion_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_religion"
                             android:layout_width="match_parent"
@@ -721,7 +721,7 @@
                             android:padding="10dp"
                             android:src="@drawable/caste_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_caste"
                             android:layout_width="match_parent"
@@ -761,7 +761,7 @@
                             android:padding="10dp"
                             android:src="@drawable/clip_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_manglik"
                             android:layout_width="match_parent"
@@ -793,7 +793,7 @@
                             android:padding="10dp"
                             android:src="@drawable/star_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_star"
                             android:layout_width="match_parent"
@@ -825,7 +825,7 @@
                             android:padding="10dp"
                             android:src="@drawable/horo_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_horo"
                             android:layout_width="match_parent"
@@ -865,7 +865,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_moon"
                             android:layout_width="match_parent"
@@ -916,7 +916,7 @@
                             android:padding="10dp"
                             android:src="@drawable/country_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_country"
                             android:layout_width="match_parent"
@@ -948,7 +948,7 @@
                             android:padding="10dp"
                             android:src="@drawable/state_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_state"
                             android:layout_width="match_parent"
@@ -980,7 +980,7 @@
                             android:padding="10dp"
                             android:src="@drawable/city_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_city"
                             android:layout_width="match_parent"
@@ -1090,7 +1090,7 @@
                             android:padding="10dp"
                             android:src="@drawable/city_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_residence"
                             android:layout_width="match_parent"
@@ -1173,7 +1173,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_emp_in"
                             android:layout_width="match_parent"
@@ -1205,7 +1205,7 @@
                             android:padding="10dp"
                             android:src="@drawable/money_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_income"
                             android:layout_width="match_parent"
@@ -1237,7 +1237,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_occupation"
                             android:layout_width="match_parent"
@@ -1269,7 +1269,7 @@
                             android:padding="10dp"
                             android:src="@drawable/desi_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_designation"
                             android:layout_width="match_parent"
@@ -1320,7 +1320,7 @@
                             android:padding="10dp"
                             android:src="@drawable/family_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_family_type"
                             android:layout_width="match_parent"
@@ -1384,7 +1384,7 @@
                             android:padding="10dp"
                             android:src="@drawable/family_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_family_status"
                             android:layout_width="match_parent"
@@ -1416,7 +1416,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_no_bro"
                             android:layout_width="match_parent"
@@ -1448,7 +1448,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_no_mari_bro"
                             android:layout_width="match_parent"
@@ -1480,7 +1480,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_no_sis"
                             android:layout_width="match_parent"
@@ -1512,7 +1512,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                         app:backgroundTint="@color/red"
                             android:id="@+id/spin_no_mari_sis"
                             android:layout_width="match_parent"
@@ -1566,8 +1566,8 @@
 
             </LinearLayout>
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

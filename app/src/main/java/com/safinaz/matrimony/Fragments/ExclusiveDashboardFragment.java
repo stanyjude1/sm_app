@@ -2,11 +2,11 @@ package com.safinaz.matrimony.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+import androidx.core.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +23,8 @@ import com.safinaz.matrimony.Activities.GallaryActivity;
 import com.safinaz.matrimony.Activities.ManagePhotosActivity;
 import com.safinaz.matrimony.MyData;
 import com.safinaz.matrimony.R;
-import com.safinaz.matrimony.Utility.AppDebugLog;
 import com.safinaz.matrimony.Utility.Common;
 import com.safinaz.matrimony.Utility.SessionManager;
-import com.safinaz.matrimony.Utility.Utils;
 import com.safinaz.matrimony.databinding.FragmentExclusiveDashboardBinding;
 import com.squareup.picasso.Picasso;
 
@@ -37,7 +35,6 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

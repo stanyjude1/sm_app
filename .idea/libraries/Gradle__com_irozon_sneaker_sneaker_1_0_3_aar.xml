@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.irozon.sneaker:sneaker:1.0.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/238af36ead4668dea211c8864e8135f9/sneaker-1.0.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/238af36ead4668dea211c8864e8135f9/sneaker-1.0.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/817e07c3d89aaa188c8d6f46d1a2083d/jetified-sneaker-1.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/817e07c3d89aaa188c8d6f46d1a2083d/jetified-sneaker-1.0.3/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.irozon.sneaker/sneaker/1.0.3/959225458ebbfcb95a91454a6e9aef74affd05de/sneaker-1.0.3-javadoc.jar!/" />

@@ -1,14 +1,16 @@
 package com.safinaz.matrimony.Activities;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
-import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.Image;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,18 +18,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.safinaz.matrimony.Fragments.BottomSheetSendMessage;
-import com.safinaz.matrimony.Model.ContactUsData;
 import com.safinaz.matrimony.Model.ContactUsResponse;
 import com.safinaz.matrimony.Model.Vendor;
 import com.safinaz.matrimony.R;
 import com.safinaz.matrimony.viewmodel.VendorDetailViewModel;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+import com.stfalcon.imageviewer.StfalconImageViewer;
+import com.stfalcon.imageviewer.loader.ImageLoader;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 
 import static com.safinaz.matrimony.Utility.Constants.VENDOR_DATA;
 
@@ -66,6 +71,8 @@ public class VendorDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_detail);
         ButterKnife.bind(this);
+//        Zoomy.Builder builder = new Zoomy.Builder(this).target(photo);
+//        builder.register();
         if(vendor.getVendorPlannerName()!=null) {
             toolbar.setTitle(vendor.getVendorPlannerName());
         }
@@ -74,6 +81,7 @@ public class VendorDetail extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         initViewModel();
+
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +107,32 @@ public class VendorDetail extends AppCompatActivity {
             @Override
             public void onError(Exception e) {
 
+            }
+        });
+
+        ArrayList<String> images = new ArrayList<>();
+        images.add(vendor.getVendorImg());
+        StfalconImageViewer.Builder stfalconImageViewer = new StfalconImageViewer.Builder<String>(this, images, new ImageLoader<String>() {
+            @Override
+            public void loadImage(ImageView imageView, String image) {
+                Picasso.get().load(image).into(imageView, new Callback() {
+                    @Override
+                    public void onSuccess() {
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+
+                    }
+                });
+            }
+        });
+
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stfalconImageViewer.show();
             }
         });
 

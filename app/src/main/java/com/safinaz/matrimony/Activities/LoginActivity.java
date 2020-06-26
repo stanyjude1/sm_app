@@ -3,8 +3,8 @@ package com.safinaz.matrimony.Activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.textfield.TextInputLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -280,10 +280,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onBackPressed() {
-        if (pd != null && pd.isShowing()) {
-            pd.dismiss();
-        }
-        MyApplication.getInstance().cancelPendingRequests(LOGIN_TAG);
-        startActivity(new Intent(LoginActivity.this, FirstActivity.class));
+//        if (pd != null && pd.isShowing()) {
+//            pd.dismiss();
+//        }
+//        MyApplication.getInstance().cancelPendingRequests(LOGIN_TAG);
+//        startActivity(new Intent(LoginActivity.this, FirstActivity.class));
+        super.onBackPressed();
     }
 }

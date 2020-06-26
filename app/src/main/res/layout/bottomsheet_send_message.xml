@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp">
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,8 +30,8 @@
                 android:singleLine="true"
                 android:textColorHighlight="#000"
                 android:textColorHint="@color/bg_row_background" />
-        </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,9 +52,9 @@
             android:singleLine="true"
             android:textColorHighlight="#000"
             android:textColorHint="@color/bg_row_background" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,9 +76,51 @@
                 android:singleLine="true"
                 android:textColorHighlight="#000"
                 android:textColorHint="@color/bg_row_background" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#fff"
+            android:orientation="vertical"
+            android:textColorHint="#7D7D7D">
+
+            <EditText
+                android:id="@+id/headcount"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:inputType="number"
+                android:backgroundTint="#000"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Headcount*"
+                android:textColorHighlight="#000"
+                android:textColorHint="@color/bg_row_background" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#fff"
+            android:orientation="vertical"
+            android:textColorHint="#7D7D7D">
+
+            <EditText
+                android:id="@+id/weddingDate"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:focusable="false"
+                android:backgroundTint="#000"
+                android:ellipsize="end"
+                android:focusableInTouchMode="true"
+                android:hint="Wedding Date*"
+                android:textColorHighlight="#000"
+                android:textColorHint="@color/bg_row_background" />
+        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,7 +141,7 @@
             android:hint="Message*"
             android:textColorHighlight="#000"
             android:textColorHint="@color/bg_row_background" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <Button

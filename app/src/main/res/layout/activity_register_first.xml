@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinatorLayout"
@@ -106,7 +106,7 @@
                     android:paddingEnd="35dp"
                     android:paddingRight="35dp" />
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/pass_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
                         android:paddingEnd="35dp"
                         android:paddingRight="35dp" />
 
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -197,7 +197,7 @@
                         android:padding="10dp"
                         android:src="@drawable/religion_pink" />
 
-                    <android.support.v7.widget.AppCompatSpinner
+                    <androidx.appcompat.widget.AppCompatSpinner
                         android:id="@+id/spin_religion"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -229,7 +229,7 @@
                         android:padding="10dp"
                         android:src="@drawable/caste_pink" />
 
-                    <android.support.v7.widget.AppCompatSpinner
+                    <androidx.appcompat.widget.AppCompatSpinner
                         android:id="@+id/spin_caste"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -261,7 +261,7 @@
                         android:padding="10dp"
                         android:src="@drawable/tongue_pink" />
 
-                    <android.support.v7.widget.AppCompatSpinner
+                    <androidx.appcompat.widget.AppCompatSpinner
                         android:id="@+id/spin_tongue"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -347,7 +347,7 @@
                             android:padding="10dp"
                             android:src="@drawable/country_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_country"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -379,7 +379,7 @@
                             android:padding="10dp"
                             android:src="@drawable/state_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_state"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -411,7 +411,7 @@
                             android:padding="10dp"
                             android:src="@drawable/city_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_city"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -444,7 +444,7 @@
                             android:padding="10dp"
                             android:src="@drawable/heart_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_mari"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -478,7 +478,7 @@
                             android:padding="10dp"
                             android:src="@drawable/dob_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_t_child"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -512,7 +512,7 @@
                             android:padding="10dp"
                             android:src="@drawable/dob_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_child_status"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -626,7 +626,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_emp_in"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -658,7 +658,7 @@
                             android:padding="10dp"
                             android:src="@drawable/money_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_income"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -690,7 +690,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_occupation"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -722,7 +722,7 @@
                             android:padding="10dp"
                             android:src="@drawable/desi_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_designation"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -803,7 +803,7 @@
                             android:padding="10dp"
                             android:src="@drawable/height_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_height"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -835,7 +835,7 @@
                             android:padding="10dp"
                             android:src="@drawable/weight_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_weight"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -867,7 +867,7 @@
                             android:padding="10dp"
                             android:src="@drawable/eat_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_eat"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -899,7 +899,7 @@
                             android:padding="10dp"
                             android:src="@drawable/smok_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_smok"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -931,7 +931,7 @@
                             android:padding="10dp"
                             android:src="@drawable/drink_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_drink"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -963,7 +963,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_body"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -995,7 +995,7 @@
                             android:padding="10dp"
                             android:src="@drawable/hoby_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_skin"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1086,7 +1086,7 @@
                             android:padding="10dp"
                             android:src="@drawable/clip_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_manglik"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1118,7 +1118,7 @@
                             android:padding="10dp"
                             android:src="@drawable/star_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_star"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1150,7 +1150,7 @@
                             android:padding="10dp"
                             android:src="@drawable/horo_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_horo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1192,7 +1192,7 @@
                             android:padding="10dp"
                             android:src="@drawable/user_pink" />
 
-                        <android.support.v7.widget.AppCompatSpinner
+                        <androidx.appcompat.widget.AppCompatSpinner
                             android:id="@+id/spin_moon"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1372,7 +1372,7 @@
         android:padding="10dp"
         app:behavior_hideable="true"
         app:behavior_peekHeight="0dp"
-        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         tools:ignore="MissingPrefix">
 
         <LinearLayout
@@ -1432,4 +1432,4 @@
 
     </LinearLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

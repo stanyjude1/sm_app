@@ -1,16 +1,14 @@
 package com.safinaz.matrimony.Adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.util.SparseBooleanArray;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.R;
@@ -81,7 +79,7 @@ public class ServiceCategoryAdapter extends RecyclerView.Adapter<ServiceCategory
     }
 
     public void setVendorData(List<VendorCategory> vendorData) {
-        vendorCategories.add(new VendorCategory("101", "https://picsum.photos/seed/picsum/200/300", "Matrimony"));
+        vendorCategories.add(new VendorCategory("101", "https://cdn4.vectorstock.com/i/thumb-large/61/98/two-hearts-with-leaves-logo-for-matrimony-vector-2166198.jpg", "Matrimony"));
         vendorCategories.addAll(vendorData);
         notifyDataSetChanged();
     }

@@ -1,26 +1,23 @@
 package com.safinaz.matrimony.Activities;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.safinaz.matrimony.Adapter.ServiceCategoryAdapter;
 import com.safinaz.matrimony.Model.VendorCategory;
 import com.safinaz.matrimony.R;
-import com.safinaz.matrimony.Utility.Common;
 import com.safinaz.matrimony.Utility.Constants;
 import com.safinaz.matrimony.Utility.Utils;
 import com.safinaz.matrimony.viewmodel.ServiceSelectionActivityViewModel;

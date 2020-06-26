@@ -2,7 +2,7 @@ package com.safinaz.matrimony.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -2,8 +2,8 @@
 package com.safinaz.matrimony.Adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.LayoutInflater;
@@ -14,11 +14,9 @@ import android.widget.TextView;
 
 import com.safinaz.matrimony.Model.MeetingBean;
 import com.safinaz.matrimony.R;
-import com.safinaz.matrimony.Utility.Common;
 import com.safinaz.matrimony.Utility.SessionManager;
 import com.squareup.picasso.Picasso;
 
-import java.util.Date;
 import java.util.List;
 
 
